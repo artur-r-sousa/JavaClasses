@@ -1,0 +1,77 @@
+package application;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import entities.Department;
+import entities.HourContract;
+import entities.Worker;
+import entities.enums.WorkerLevel;
+
+public class Main {
+
+	public static void main(String[] args) throws ParseException {
+		
+		Scanner sc = new Scanner(System.in);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
+		System.out.println("Enter Department Name: ");
+		String department = sc.nextLine();
+		
+		Department dep = new Department(department);
+		Worker worker = new Worker();
+		
+		System.out.println("-----------");
+		System.out.println("Enter worker data: ");
+		System.out.println("name: ");
+		String name = sc.nextLine();
+		
+		System.out.println("Enter worker Level: ");
+		//String wLvl = sc.nextLine();
+		WorkerLevel wLvl = WorkerLevel.valueOf(sc.nextLine());
+		
+		System.out.println("Worker base salary: ");
+		double workerBaseIncome = sc.nextDouble();
+		
+		worker.setName(name);
+		worker.setDepartment(dep);
+		worker.setLevel(wLvl);
+		worker.setBaseSalary(workerBaseIncome);
+		
+		System.out.println(worker);
+		
+		System.out.println("How Many contracts to this worker: ");
+		int n = sc.nextInt();
+		
+		HourContract hContract = new HourContract();
+		List<HourContract> contracts = new ArrayList<>();
+		
+		for (int i = 0; i < n; i++) {
+			System.out.println("Date (DD/MM/YYYY): ");
+			String contractDate = sc.nextLine();			
+			hContract.setDate(sdf.parse(contractDate));
+			
+			System.out.println("Value per Hour: ");
+			hContract.setValuePerHour(sc.nextDouble());
+			
+			System.out.println("Durations(hours): ");
+			hContract.setHours(sc.nextInt());
+			
+			contracts.add(hContract);
+			System.out.println("Contract Info -" + hContract);
+
+		}
+		
+		for (int i = 0; i < contracts.size(); i++) {
+			int id = 0;
+			System.out.println(contracts.get(id));
+		}
+		
+		sc.close();
+
+	}
+
+}

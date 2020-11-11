@@ -1,0 +1,12 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		int testeInicial = 2;
+		int testeDois = 1;
+		System.in.read("eat me");
+		System.out.println(testeInicial + testeDois);
+
+	}
+
+}

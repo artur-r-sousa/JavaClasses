@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;trinagleSolver&apos; to &apos;triangleSolver&apos;&#x0D;&#x0A;- Original project: &apos;curso_programacao&apos;&#x0D;&#x0A;- Original element: &apos;trinagleSolver&apos;&#x0D;&#x0A;- Renamed element: &apos;triangleSolver&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;trinagleSolver&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{trinagleSolver.java[trinagleSolver" matchStrategy="1" name="triangleSolver" qualified="false" references="true" similarDeclarations="false" stamp="1600108174999" textual="false" version="1.0"/>
+</session>

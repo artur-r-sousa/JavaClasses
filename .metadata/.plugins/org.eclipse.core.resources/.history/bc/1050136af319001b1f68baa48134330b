@@ -1,0 +1,30 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.ProdEnt;
+
+public class vectProdMain {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter Product Name: ");
+		String prodName = sc.nextLine();
+		
+		System.out.println("Enter Product Price: ");
+		double prodPrice = sc.nextDouble();
+		
+		ProdEnt prodEnt = new ProdEnt(prodName, prodPrice);
+		System.out.println("Product " + prodEnt.getProdName() + " added successfully");
+		
+		
+		sc.close();
+
+
+	}
+
+}

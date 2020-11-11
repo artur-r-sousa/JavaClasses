@@ -1,0 +1,96 @@
+package application;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+
+import entities.Department;
+import entities.HourContract;
+import entities.Worker;
+import entities.enums.WorkerLevel;
+
+public class Main {
+
+	public static void main(String[] args) throws ParseException {
+		
+		Scanner sc = new Scanner(System.in);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf2 = new SimpleDateFormat("MM/yyyy");
+		
+		System.out.println("Enter Department Name: ");
+		String department = sc.nextLine();
+		
+		Department dep = new Department(department);
+		Worker worker = new Worker();
+		
+		System.out.println("-----------");
+		System.out.println("Enter worker data: ");
+		System.out.println("name: ");
+		String name = sc.nextLine();
+		
+		System.out.println("Enter worker Level: ");
+		//String wLvl = sc.nextLine();
+		WorkerLevel wLvl = WorkerLevel.valueOf(sc.nextLine());
+		
+		System.out.println("Worker base salary: ");
+		double workerBaseIncome = sc.nextDouble();
+		
+		worker.setName(name);
+		worker.setDepartment(dep);
+		worker.setLevel(wLvl);
+		worker.setBaseSalary(workerBaseIncome);
+		
+		System.out.println(worker);
+		
+		System.out.println("How Many contracts to this worker: ");
+		int n = sc.nextInt();
+		sc.nextLine();
+		
+		
+		List<HourContract> contracts = new ArrayList<>();
+		
+		for (int i = 0; i < n; i++) {
+			HourContract hContract2 = new HourContract();
+			System.out.println("Date (DD/MM/YYYY): ");
+			String contractDate = sc.nextLine();
+			
+			Date cDate = sdf.parse(contractDate);
+			hContract2.setDate(cDate);
+			
+			System.out.println("Value per Hour: ");
+			hContract2.setValuePerHour(sc.nextDouble());
+			
+			System.out.println("Durations(hours): ");
+			hContract2.setHours(sc.nextInt());
+			
+			contracts.add(hContract2);
+			System.out.println("Contract Info -" + hContract2);
+			sc.nextLine();
+
+		}
+		
+		System.out.println("Contracts list: " + contracts.get(0) + "---" + contracts.get(1) + "---" + contracts.get(2));
+		System.out.println("Enter month and year to calculate income (MM/YYYY): ");
+		Date analysis = sdf2.parse(sc.nextLine());
+		Calendar cal2 = Calendar.getInstance();
+		cal2.setTime(analysis);
+		cal2.add(Calendar.MONTH, 1);
+		
+		
+		
+		System.out.println("worker income: " + worker.income(cal2.get(Calendar.YEAR), cal2.get(Calendar.MONTH)));
+		
+		
+		
+		
+		
+		
+		sc.close();
+
+	}
+
+}

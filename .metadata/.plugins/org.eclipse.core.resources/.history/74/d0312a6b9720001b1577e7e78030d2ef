@@ -1,0 +1,39 @@
+package entities;
+
+public class MatLearn {
+	private int m;
+	private int n;
+	private Integer[][] matrix;
+	
+	public MatLearn(int m, int n) {
+		
+		this.m = m;
+		this.n = n;
+		this.matrix = Integer[m][n]; 
+	}
+	
+	public void setMatrix() {
+		
+		this.matrix = int[m][n];
+		
+	}
+	
+	public int getM() {
+		return m;
+	}
+
+	public void setM(int m) {
+		this.m = m;
+	}
+
+	public int getN() {
+		return n;
+	}
+
+	public void setN(int n) {
+		this.n = n;
+	}
+	
+	
+	
+}

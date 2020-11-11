@@ -1,0 +1,54 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.EmpIncrease;
+
+public class EmpIncreaseMain {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter number of employees to add: ");
+		int n = sc.nextInt();
+		
+		List<Object> objList = new ArrayList<>();
+		
+		for (int i=0; i<n; i++) {
+			
+			System.out.println("Enter Employee id: ");
+			int id = sc.nextInt();
+			sc.nextLine();
+			
+			System.out.println("Enter Employee name: ");
+			String name = sc.nextLine();
+			
+			System.out.println("Enter Employee income: ");
+			double income = sc.nextDouble();
+			
+			EmpIncrease emp = new EmpIncrease(id, name, income);
+			objList.add(emp);
+			
+			
+			
+		}
+		System.out.println("List of Employees: ");
+		for (Object x : objList) {
+			
+			System.out.println(x.toString());
+			
+		}
+		
+		
+		
+		
+		sc.close();
+
+	}
+
+}

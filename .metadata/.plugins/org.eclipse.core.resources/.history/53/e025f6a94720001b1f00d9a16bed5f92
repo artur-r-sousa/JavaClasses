@@ -1,0 +1,44 @@
+package application;
+
+import java.util.Scanner;
+
+public class matMain {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter value for lines: ");
+		int m = sc.nextInt();
+		
+		System.out.println("Enter value for columns: ");
+		int n = sc.nextInt();
+		
+		//generates the matrix mat
+		int[][] mat = new int[m][n];
+		
+		//generating elements for mat
+		for(int i=0; i<m; i++) {
+			for (int j=0; j<n; j++) {
+				mat[i][j] = sc.nextInt();				
+			}			
+		}
+		
+		//find element x
+		System.out.println("Enter the element to search");
+		int x = sc.nextInt();
+		for(int i=0; i<m; i++) {
+			for (int j=0; j<n; j++) {
+				if (mat[i][j] == x) {
+					System.out.println("values for x: "
+							+ "Line: " + mat[i] + ", Column: " + mat[j]);
+					
+				}
+			}			
+		}
+		
+		sc.close();
+
+	}
+
+}

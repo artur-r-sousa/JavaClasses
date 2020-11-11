@@ -1,0 +1,23 @@
+import java.util.Locale;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int testeInicial = 2;
+		int testeDois = 1;
+		double testeTres = 10.45667;
+		System.out.println(testeInicial + testeDois);
+		// " "%.3f%n" printformatted ( "% .numeroDeCasas formata ('%n' ->quebra de linha), nomeDaVariavel)
+		System.out.printf("%.3f%n", testeTres);
+		Locale.setDefault(Locale.US);
+		System.out.printf("%.3f%n", testeTres);
+		
+		char user = "Maria";
+		int age = 57;
+		double income = 10762.123478906;
+				
+		System.out.printf("Usuario: %s  Idade: %d Renda: R$ %.2f%n", user, age, income);
+		
+	}
+
+}

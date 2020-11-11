@@ -1,0 +1,19 @@
+
+public class conditionTests {
+
+	public static void main(String[] args) {
+		int x = 5;
+		
+		System.out.println("bom dia");
+		
+		if (x == 5) {
+			
+			System.out.println("boa tarde");
+		} else {
+			System.out.println("boa noite");
+		}
+		
+
+	}
+
+}

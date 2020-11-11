@@ -1,0 +1,71 @@
+package application;
+
+import java.util.Scanner;
+
+public class matMain {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter value for lines: ");
+		int m = sc.nextInt();
+		
+		System.out.println("Enter value for columns: ");
+		int n = sc.nextInt();
+		
+		//generates the matrix mat
+		int[][] mat = new int[m][n];
+		
+		//generating elements for mat
+		for(int i=0; i<m; i++) {
+			for (int j=0; j<n; j++) {
+				mat[i][j] = sc.nextInt();				
+			}			
+		}
+		System.out.println("---------------------");
+		//find element x
+		System.out.println("Enter the element to search");
+		int x = sc.nextInt();
+		for(int i=0; i<m; i++) {
+			for (int j=0; j<n; j++) {
+				if (mat[i][j] == x) {
+					System.out.println("Position (" + i + ", " + j + ")");					
+					//show elements for x.above (i-1), x.left(j-1), x.right(j+1), x.bottom(i+1)
+					//i-1 
+					if (i >= 0){
+						System.out.println("Above: " + mat[i][j-1]);
+					} else {
+						System.out.println("Above null");
+					}
+
+					//j-1
+					if (j >= 0) {
+						System.out.println("Left: " + mat[i][j-1]);
+					} else {
+						System.out.println("Left null");
+					}
+					
+					//j+1
+					if (j <= mat[j].length) {
+						System.out.println("Right: " + mat[i][j+1]);
+					} else {
+						System.out.println("Right null");
+					}
+					
+					//i+1
+					if (i <= mat[i].length) {
+						System.out.println("Bottom: " + mat[i+1][j]);
+					} else {
+						System.out.println("Bottom null");
+					}
+					
+				}
+			}			
+		}
+		
+		sc.close();
+
+	}
+
+}

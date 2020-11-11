@@ -1,0 +1,40 @@
+package application;
+
+import java.util.Scanner;
+
+import entities.Department;
+import entities.Worker;
+import entities.enums.WorkerLevel;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Department Name: ");
+		String department = sc.nextLine();
+		
+		Department dep = new Department(department);
+		Worker worker = new Worker();
+		
+		System.out.println("-----------");
+		System.out.println("Enter worker data: ");
+		System.out.println("name: ");
+		String name = sc.nextLine();
+		
+		System.out.println("Enter worker Level: ");
+		//String wLvl = sc.nextLine();
+		WorkerLevel wLvl = WorkerLevel.valueOf(sc.nextLine());
+		System.out.println(wLvl);
+		System.out.println("Worker base salary: ");
+		double workerBaseIncome = sc.nextDouble();
+		
+		
+		
+		
+		
+		sc.close();
+
+	}
+
+}

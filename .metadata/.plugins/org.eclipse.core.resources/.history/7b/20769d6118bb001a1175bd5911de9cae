@@ -1,0 +1,11 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		int testeInicial = 2;
+		int testeDois = 1
+		System.out.println(testeInicial + testeDois);
+
+	}
+
+}

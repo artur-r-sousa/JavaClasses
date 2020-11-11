@@ -1,0 +1,37 @@
+package curso_programacao;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		List<Integer> intList = new ArrayList<>();
+		List<String> strList = new ArrayList<>();
+
+		strList.add("Maria");
+		strList.add("jack");
+		strList.add("bauer");
+		strList.add("olivia");
+		strList.add("dunham");
+		strList.add(2, "Kratos");
+		
+	
+		for (String y : strList) {
+			
+			System.out.println(y);
+			
+		}
+		
+		System.out.println("--------------------------");
+		
+		strList.removeIf(x -> x.charAt(1) == 'a');
+		for (String x : strList) {
+			
+			System.out.println(x);
+		}
+		
+	}
+
+}

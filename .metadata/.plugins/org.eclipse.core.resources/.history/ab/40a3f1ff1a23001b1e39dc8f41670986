@@ -1,0 +1,29 @@
+package curso_programacao;
+
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Calendar;
+import java.util.Date;
+
+public class DateCalendar {
+
+	public static void main(String[] args) {
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		
+		Date d = Date.from(Instant.parse("2020-11-09T04:20:07Z"));
+		
+		System.out.println(sdf.format(d));
+		
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(d);
+		//Calendar._field_, amount to Increase
+		cal.add(Calendar.HOUR_OF_DAY, 4);
+		cal.add(Calendar.DAY_OF_MONTH, 7);
+		d = cal.getTime();
+		
+		
+		System.out.println(sdf.format(d));
+	}
+
+}

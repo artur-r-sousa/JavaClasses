@@ -1,0 +1,46 @@
+package entities;
+
+public class MatLearn {
+	private final int M; 			// number of rows
+	private final int N; 			// number of columns
+	private int[][] matrix; 		// M-by-N array
+	
+	public MatLearn(int M, int N) {
+		
+		
+		this.M = M;
+		this.N = N;
+		matrix = new int[M][N];
+		
+	}
+	
+	public MatLearn(int[][] matrix) {
+		M = matrix.length;
+		N = matrix[0].length;
+		this.matrix = new int[M][N];
+		for (int i = 0; i < M; i++) {
+			for (int j = 0; j < N; j++) {
+				this.matrix[i][j] = matrix[i][j]; 
+			}
+		}
+		
+	}
+
+	public int getM() {
+		return M;
+	}
+
+	public int getN() {
+		return N;
+	}
+
+	public int[][] getMatrix() {
+		return matrix;
+	}
+
+	public void setMatrix(int[][] matrix) {
+		this.matrix = matrix;
+	}
+	
+	
+}

@@ -1,0 +1,14 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		int testeInicial = 2;
+		int testeDois = 1;
+		double testeTres = 10.45667;
+		System.out.println(testeInicial + testeDois);
+		// " "%.3f%n" printformatted ( "% .numeroDeCasas formata ('%n' ->quebra de linha), nomeDaVariavel)
+		System.out.printf("%.3f%n", testeTres);
+
+	}
+
+}

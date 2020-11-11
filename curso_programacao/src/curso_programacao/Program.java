@@ -1,0 +1,51 @@
+package curso_programacao;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.ArrayList;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+
+		List<String> strList = new ArrayList<>();
+
+		strList.add("Maria");
+		strList.add("jack");
+		strList.add("bauer");
+		strList.add("Olivia");
+		strList.add("dunham");
+		strList.add(2, "Octavarius");
+		
+	
+		for (String y : strList) {
+			
+			System.out.println(y);
+			
+		}
+		
+		System.out.println("--------------------------");
+		
+		strList.removeIf(x -> x.charAt(1) == 'a');
+		for (String x : strList) {
+			
+			System.out.println(x);
+		}
+		System.out.println("--------------------------");
+		
+		List<String> result = strList.stream().filter(x -> x.charAt(0) == 'O').collect(Collectors.toList());
+		System.out.println("Filter for words beggining at 'O' :" );
+		for (String filtered : result) {
+			System.out.println(filtered);
+			
+		}
+		System.out.println("--------------------------");
+		System.out.println("Find First element beggining at char 'O': ");
+		String name = strList.stream().filter(x -> x.charAt(0) == 'O').findFirst().orElse("achei nao man");
+		System.out.println(name);
+		String nameS = strList.stream().filter(x -> x.charAt(0) == 'K').findFirst().orElse("achei nao man");
+		System.out.println(nameS);
+	}
+
+}

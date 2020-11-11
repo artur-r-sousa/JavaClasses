@@ -1,0 +1,15 @@
+package entities;
+
+public class ProdEnt {
+	
+	private String prodName;
+	private double prodPrice;
+	
+	
+	public ProdEnt(String prodName, double prodPrice) { 
+		
+		this.prodName = prodName;
+		this.prodPrice = prodPrice;
+		
+	}	
+}

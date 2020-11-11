@@ -1,0 +1,30 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class conditionTests {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);		
+		
+		int minutos = sc.nextInt();
+		double conta = 50.0;
+		
+		if ( minutos > 100) {
+			
+			conta = conta + (2 * (minutos - 100));
+			System.out.println("Valor da conta: " + conta);
+			
+		} else {
+			
+			System.out.println("Valor da conta: " + conta);
+			
+		}
+		
+		
+		
+		sc.close();
+	}
+
+}

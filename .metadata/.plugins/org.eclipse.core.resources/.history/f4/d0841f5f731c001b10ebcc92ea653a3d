@@ -1,0 +1,44 @@
+package curso_programacao;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		List<Integer> intList = new ArrayList<>();
+		List<String> strList = new ArrayList<>();
+		
+				
+		intList.add(1);
+		intList.add(2);
+		intList.add(3);
+		intList.add(4);
+		intList.add(2, 2);
+		
+		strList.add("Maria");
+		strList.add("jack");
+		strList.add("bauer");
+		strList.add("olivia");
+		strList.add("dunham");
+		strList.add(2, "Kratos");
+		
+		
+		
+		for (int x : intList) {
+			
+			System.out.println(x);
+			
+		}
+			
+		
+		for (String y : strList) {
+			
+			System.out.println(y);
+			
+		}
+
+	}
+
+}
